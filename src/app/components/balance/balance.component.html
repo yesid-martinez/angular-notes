@@ -1,0 +1,13 @@
+<h1>Balance works!</h1>
+
+<!-- Uso de variable -->
+<h3>{{title}}</h3>
+
+<h3>{{inputTitle}}</h3>
+
+<!-- *ngIf => Directiva estructural que permite agregar o eliminar elementos del DOM según una condición especificada -->
+<div *ngIf="balance">
+    <h4>Amount: {{balance.amount}}</h4>
+    <h4>Income: {{balance.income}}</h4>
+    <h4>Expenses: {{balance.expenses}}</h4>
+</div>

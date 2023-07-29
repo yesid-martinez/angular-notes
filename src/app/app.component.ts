@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Balance } from './models/balance.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-expenses-tracker';
+  balance: Balance = {
+    amount: 123_000,
+    income: 53_00,
+    expenses: 52_000,
+  };
 }
