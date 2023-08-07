@@ -1,0 +1,33 @@
+<div class="transaction">
+    <div class="transaction__title">
+
+        <div *ngIf="transaction.type === 'income'" class="transaction__icon transaction__income-icon">↑</div>
+        <div *ngIf="transaction.type === 'expense'" class="transaction__icon transaction__expense-icon">↓</div>
+
+        <h5 class="transaction__category">{{ transaction.category }}</h5>
+
+        <span class="material-symbols-outlined transaction__remove"
+            (click)="removeTransaction()"
+        >
+            delete
+        </span>
+    </div>
+    <div>
+        <!-- ngClass: Directiva que permite aplicar clases a un elemento HTML de manera dinámica -->
+        <!-- Basándose en expresiones y condiciones en el componente -->
+        <h5 class="transaction__amount"
+            [ngClass]="transaction.type === 'expense' ? 
+            'transaction__amount-expense' : 'transaction__amount-income'
+            "
+        >
+            {{ transaction.amount | currency }}
+        </h5>
+        <!-- Directiva que permite aplicar estilos CSS en línea de manera dinámica -->
+        <!-- a un elemento HTML en función de las propiedades del componente. -->
+        <h5 class="transaction__date"
+            [ngStyle]="dateStyles"
+        >
+            {{ transaction.date | date }}
+        </h5>
+    </div>
+</div>

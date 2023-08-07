@@ -1,0 +1,4 @@
+<!-- ngFor: Directiva que itera una colección de elementos (Arrays) generando contenido dinámico basado en cada elemento de la colección. -->
+<div class="transactions">
+    <app-transaction *ngFor="let transaction of transactions" [transaction]="transaction" />
+</div>

@@ -1,13 +1,19 @@
-<h1>Balance works!</h1>
-
-<!-- Uso de variable -->
-<h3>{{title}}</h3>
-
-<h3>{{inputTitle}}</h3>
-
 <!-- *ngIf => Directiva estructural que permite agregar o eliminar elementos del DOM según una condición especificada -->
-<div *ngIf="balance">
-    <h4>Amount: {{balance.amount}}</h4>
-    <h4>Income: {{balance.income}}</h4>
-    <h4>Expenses: {{balance.expenses}}</h4>
+<div *ngIf="balance" class="balance">
+    <div class="balance__header">
+        <h4>Total Balance</h4>
+        <!-- Pipes: Son utilizados para formatear, filtrar y manipular datos de manera sencilla y reutilizable. -->
+        <!-- Permite transformar los datos antes de mostrarlos en la interfaz de usuario. -->
+        <h2>{{ balance.amount | currency }}</h2>
+    </div>
+    <div class="balance__info">
+        <div>
+            <h4>Income</h4>
+            <h3>{{ balance.income | currency }}</h3>
+        </div>
+        <div>
+            <h4>Expenses</h4>
+            <h3>{{ balance.expenses | currency }}</h3>
+        </div>
+    </div>
 </div>

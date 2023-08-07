@@ -1,0 +1,74 @@
+@use "../../../styles" as s;
+
+.transaction {
+    background-color: #fff;
+    font-family: s.$font-family;
+    border-radius: 10px;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+
+    &__title{
+        display: flex;
+        gap: .6rem;
+    }
+
+    &__category {
+        color: #121e6c;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    &__amount {
+        color: #121e6c;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: right;
+    }
+
+    &__date {
+        color: #737373;
+        font-size: 0.7rem;
+        font-weight: 400;
+        text-align: right;
+    }
+
+    &__icon{
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    &__expense-icon {
+        color: #ee424e;
+        background-color: #ee424d46;
+    }
+
+    &__income-icon {
+        color: #59b634;
+        background-color: #defdc9;
+    }
+
+    &__remove {
+        color: #ea535d;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+            color: #c8343e;
+        }
+    }
+
+    &__amount-expense {
+        color: #c8343e;
+    }
+
+    &__amount-income {
+        color: #59b634;
+    }
+}
